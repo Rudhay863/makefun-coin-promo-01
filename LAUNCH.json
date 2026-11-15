@@ -1,1 +1,4 @@
-{"create_signature":"REPLACE_WITH_THE_CREATE_TRANSACTIONS_SIGNATURE","mint":"REPLACE_WITH_YOUR_COINS_MINT"}
+{
+  "mint": "GibbYHn57Upy5tcDngpR7QRdMbwvvBChDadTCpatBVG5",
+  "create_signature": "51yQ9kY8rmTxcmqk8Lwv2jjmk4nZXS37M6NcA8aLoSuBvfvnUCrKkpf13QZvAMxSfj6gseKMfEBQwDpE2edMb91T"
+}
