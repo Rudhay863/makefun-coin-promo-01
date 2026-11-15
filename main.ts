@@ -66,8 +66,20 @@ if (typeof launch !== 'object' || launch === null || Array.isArray(launch)) {
 }
 const { mint, create_signature: createSignature } = launch as Record<string, unknown>;
 
+const launchKeys = Object.keys(launch as Record<string, unknown>);
+const expectedKeys = ['mint', 'create_signature'];
+if (
+  launchKeys.length !== expectedKeys.length ||
+  !expectedKeys.every((key) => launchKeys.includes(key))
+) {
+  fail('LAUNCH.json must contain exactly mint and create_signature');
+}
+
 if (typeof mint !== 'string' || mint.length < 32 || mint.length > 44 || !isBase58(mint)) {
   fail('mint must be a base58 string of 32-44 characters');
+}
+if (base58Decode(mint).length !== 32) {
+  fail('mint must decode to exactly 32 bytes');
 }
 if (typeof createSignature !== 'string' || !isBase58(createSignature)) {
   fail('create_signature must be a base58 string');
